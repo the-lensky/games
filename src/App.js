@@ -2,8 +2,8 @@ import React from 'react'
 function App() {
     return (
         <div>
-            <h1>rekbnbsfdfsdf</h1>
-            <p> adf dff</p>
+            <h1>GAMES</h1>
+
         </div>
 
     )
