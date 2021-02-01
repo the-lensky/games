@@ -1,31 +1,34 @@
-const base_url = `https://api.rawg.io/api/`
+//Base URL
+const base_url = "https://api.rawg.io/api/";
 
-
-const getCurrentMounth = () => {
-    const mounth = new Date().getMonth() + 1
-    if (mounth < 10) {
-        return `0${mounth}`
+//Getting the date
+const getCurrentMonth = () => {
+    const month = new Date().getMonth() + 1;
+    if (month < 10) {
+        return `0${month}`;
     } else {
-        return mounth
+        return month;
     }
-}
-
+};
+//Getting the date
 const getCurrentDay = () => {
-    const day = new Date().getDate() + 1
+    const day = new Date().getDate();
     if (day < 10) {
-        return `0${day}`
+        return `0${day}`;
     } else {
-        return day
+        return day;
     }
-}
+};
 
-const currentYear = new Date().getFullYear()
-const currentMounth = new Date().getMonth()
-const currentDay = new Date().getDay()
-const currentDate = `${currentYear} -${currentMounth} -${currentDay}`
-const lastYear = `${currentYear - 1} -${currentMounth} -${currentDay}`
-const nextYear = `${currentYear + 1} -${currentMounth} -${currentDay}`
+//Current day/month/year
+const currentYear = new Date().getFullYear();
+const currentMonth = getCurrentMonth();
+const currentDay = getCurrentDay();
+const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
+const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
-const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page+size=10`
+//Popular Games
+const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
 
-export const popularGameUrl = () => `${base_url}${popular_games}`
+export const popularGamesURL = () => `${base_url}${popular_games}`;
